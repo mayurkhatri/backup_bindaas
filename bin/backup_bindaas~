@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+require 'backup_bindaas'
+
+bkup = BackupBindaas::Backup.new
+bkup.backup
