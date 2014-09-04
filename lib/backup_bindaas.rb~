@@ -1,9 +1,10 @@
 require "backup_bindaas/version"
 
 module BackupBindaas
-  def backup
-    puts "HI"
+  class Backup
+    def backup
+      puts "Jai maata di"
+      file = File.open("../../config/database.yml", "r")
+    end
   end
-
-  def
 end

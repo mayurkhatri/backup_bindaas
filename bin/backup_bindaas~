@@ -1,6 +1,8 @@
 #!/usr/bin/env ruby
+# encoding: utf-8
 
-require 'backup_bindaas'
+#require 'backup_bindaas'
+require File.expand_path("../../lib/backup", __FILE__)
 
 bkup = BackupBindaas::Backup.new
 bkup.backup
