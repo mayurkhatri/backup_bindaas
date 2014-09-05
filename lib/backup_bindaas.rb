@@ -2,8 +2,8 @@ require "backup_bindaas/version"
 require "active_record"
 module BackupBindaas
   class Backup
-    def backup
-      if ARGV[0].eql?("dev") || ARGV[0].eql?("development")
+    def backup(args)
+      if args.eql?("dev") || args.eql?("development")
         # TODO run mysqldump command
         db_config = ActiveRecord::Base.configurations["development"]
         puts db_config
