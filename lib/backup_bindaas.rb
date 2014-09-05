@@ -1,5 +1,5 @@
 require "backup_bindaas/version"
-
+require "active_record"
 module BackupBindaas
   class Backup
     def backup
