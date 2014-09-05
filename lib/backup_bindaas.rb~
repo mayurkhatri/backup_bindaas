@@ -9,12 +9,12 @@ module BackupBindaas
       development_details = Hash.new
       production_details = Hash.new
       config.each do |environment, details|
-        if environment.equals("development")
+        if environment.eql?("development")
           development_details["adapter"] = details["adapter"]
           development_details["database"] = details["database"]
           development_details["username"] = details["username"]
           development_details["password"] = details["password"]
-        elsif  environment.equals("production")
+        elsif  environment.eql?("production")
           production_details["adapter"] = details["adapter"]
           production_details["database"] = details["database"]
           production_details["username"] = details["username"]
