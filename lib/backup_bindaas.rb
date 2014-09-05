@@ -24,7 +24,7 @@ module BackupBindaas
       if args.eql?("dev") || args.eql?("development")
         # TODO run mysqldump command
         puts "before sh command"
-        sh "mysqldump -u #{development_details["username"]} -p#{development_details["password"]} #{development_details["database"]} > ~/projects/indian_food/testbackup1.sql")
+        sh "mysqldump -u #{development_details["username"]} -p#{development_details["password"]} #{development_details["database"]} > ~/projects/indian_food/testbackup1.sql"
         puts "Backup successful"
       end
     end
