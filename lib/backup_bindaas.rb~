@@ -3,9 +3,6 @@ require "active_record"
 module BackupBindaas
   class Backup
     def backup
-      file = File.open("config/database.yml", "r")
-      data = file.read
-      file.close
       if ARGV[0].eql?("dev") || ARGV[0].eql?("development")
         # TODO run mysqldump command
         db_config = ActiveRecord::Base.configurations["development"]
