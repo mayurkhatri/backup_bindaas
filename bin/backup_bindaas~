@@ -5,4 +5,5 @@
 require File.expand_path("../../lib/backup_bindaas", __FILE__)
 
 bkup = BackupBindaas::Backup.new
-bkup.backup
+puts ARGV[0]
+#bkup.backup(ARGV[0])
