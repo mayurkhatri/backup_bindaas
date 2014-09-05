@@ -3,11 +3,16 @@ require "backup_bindaas/version"
 module BackupBindaas
   class Backup
     def backup
-      puts "Jai maata di"
-      file = File.open("config/database.yml", "r");
+      file = File.open("config/database.yml", "r")
       data = file.read
       file.close
-      puts data
+      if ARGV[0].eql?("dev") || ARGV[0].eql?("development")
+        # TODO run mysqldump command
+        db_config = ActiveRecord::Base.configurations["development"]
+
+        sh "mysqldump -u #{db_config['username']} -p#{db_config['password']} #{db_config['database']} > ~/projects/indian_food/testbk.sql"
+        puts "Backup successful"
+      end
     end
   end
 end
